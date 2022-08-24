@@ -1,0 +1,66 @@
+<body>
+    <div class="nav" >
+        <ul>
+        <li><a id="details" style="margin-left: 120%;">DoctorDetails</a></li>
+        <li ><a id="pharmacy">PharmacyDetails</a></li>
+        <li><a id="slots" style="margin-left: 140%;">SlotDetails</a></li>
+        </ul>
+        </div>
+
+ 
+        
+<div class="col-md-5 offset-md-3">
+    <div class="container"> 
+    <h3 style="color: black; font-weight: bold; margin-left: 28%;"> Book Appointment</h3><br>
+    
+    <form #bookForm="ngForm" (ngSubmit)="onAddBooking(bookForm)">
+         <div class="form-group">
+            <label>Doctor Id</label>
+            <!-- <input type="text" class ="form-control" id = "doctorId" [(ngModel)]="doctor.doctorId" name = "doctorId"> -->
+             <select [(ngModel)]="doctor" name="doctorId">
+
+                <option *ngFor="let doctor of doctorList" value="doctor"></option>
+             </select>
+        </div> 
+
+        <div class="form-group">
+            <label>Patient Name</label>
+            <input required type="text" class ="form-control" id = "patientName"
+                [(ngModel)] = "patient.patientName" #patientName="ngModel" name = "patientName" [class.is-invalid]="patientName.invalid && patientName.touched">
+                <div *ngIf="patientName.errors &&  (patientName.invalid && patientName.touched)">
+                <span class="text-danger" *ngIf="patientName.errors['required']">Patient Name is required</span>
+                </div>
+        </div>
+    
+        <div class="form-group">
+            <label>Age</label>
+            <input required type="text" class ="form-control" id = "age" [(ngModel)] = "patient.age" #age="ngModel" name = "age" [class.is-invalid]="age.invalid && age.touched">
+            <div *ngIf="age.errors &&  (age.invalid && age.touched)">
+                <span class="text-danger" *ngIf="age.errors['required']">Age is required</span>
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input required type="number" class ="form-control" id = "phoneNumber" pattern="[789][0-9]{9}" [(ngModel)] = "patient.phoneNumber" name = "phoneNumber" #phoneNumber="ngModel" name = "phoneNumber" [class.is-invalid]="phoneNumber.invalid && phoneNumber.touched">
+            <div *ngIf="phoneNumber.errors &&  (phoneNumber.invalid && phoneNumber.touched)">
+                <span class="text-danger" *ngIf="phoneNumber.errors['required']">PhoneNumber is required</span>
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label>Description</label>
+            <input required type="text" class ="form-control" id = "description" [(ngModel)] = "patient.description" name = "description" #description="ngModel" name = "description" [class.is-invalid]="description.invalid && description.touched">
+            <div *ngIf="description.errors &&  (description.invalid && description.touched)">
+                <span class="text-danger" *ngIf="description.errors['required']">Description is required</span>
+            </div>
+        </div>
+
+        <button [disabled]="bookForm.invalid" class= "btn btn-dark" id="btn" type="submit">Book</button>
+    </form>  
+</div>
+ 
+</div> 
+
+</body>
+

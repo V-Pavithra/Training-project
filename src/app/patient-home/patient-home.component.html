@@ -1,0 +1,45 @@
+
+<body>
+
+      <div id="main-div">
+      <div class="nav" >
+        <ul>
+        <li><a id="details" style="margin-left: 120%;">DoctorDetails</a></li>
+        <li ><a routerLink="" id="search">SearchDoctor</a></li>
+        <!-- <li><a routerLink="" id="slots" style="margin-left: 140%;">SlotDetails</a></li> -->
+        </ul>
+      </div>
+      <div class="form-group">
+      <input type="text" [(ngModel)]="term" class="search" placeholder="Search your Doctor">
+      </div>
+      <div class="container" *ngFor="let i of doctors |filter:term" id="card">
+        <div class="row justify-content-center">
+            <div class="row gy-3">
+            <div class="col-sm">
+                <div class="card shadow" style="width: 25rem; background-color: #008080; opacity: 0.9;">
+                    <div class="inner">
+                        <img src={{i?.imageUrl}} width="200" height="200">
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-title">
+                            <label></label>{{i.firstName}}<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h3> {{i.lastName}} </h3></label> </h3>
+                            <h4><label>Specialization :</label>&nbsp;&nbsp;{{i.specialization}}</h4>
+                        
+                        <button routerLink="/patient/booking/{{i.id}}" class="book" id="btn">Book</button>
+                        </div>
+                    </div>
+                </div>        
+            
+            </div>       
+            </div>
+        </div> 
+           
+        
+          <!-- <div class="footer-main">
+              <div class="footer-left">@All rights reserverd .inc</div>
+              <div class="footer right">Contact Us: 7465837589</div>
+          </div> -->
+
+    </div>  
+  </body>
+  

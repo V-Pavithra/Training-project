@@ -1,0 +1,174 @@
+body{
+    height: 100vh;
+   }
+
+/* nav{
+    background-color:#008080;
+   }
+
+
+#na{
+    height: 50px;
+   } */
+
+   .nav {
+    background: #008080;
+    text-align: center;
+    height: 50px;
+    justify-content: space-between;
+  }
+ 
+  .nav ul {
+    display: inline-flex;
+    list-style: none;
+    color: white;
+  }
+ 
+  .nav ul li {
+    width: 150px;
+    margin: 5px;
+    padding: 7px;
+    font-weight: bold;
+  }
+ 
+  #details {
+    height: 50px;
+    background-color: darkgrey;
+    margin-left: 90px;
+    width: 120px;
+    
+  }
+ 
+  #details:hover {
+    height: 50px;
+    background-color: #8DC3EE;
+    
+  }
+ 
+  #pharmacy:hover{
+    width: 130px;
+  }
+
+  #slots:hover{
+    width: 100px;
+  }
+  ul li a {
+    width: 80px;
+    text-decoration: none;
+    color: black;
+    margin-top: -6px;
+    display: block;
+    padding: 15px 20px;
+    position: relative;
+    top: -6px;
+    padding-right: 30px;
+    margin-left: 170px;
+  }
+ 
+  ul li a:hover {
+    background-color: #8DC3EE;
+    margin-top: -6px;
+    transition: 0.5s;
+    text-transform: initial;
+    height: 50px;
+    padding-left: 10px;
+  }
+ 
+  ul li a:active {
+    background-color: #303d4e;
+  }   
+
+  table {
+    margin: 0 auto;
+    width: 93%;
+    border: none;
+  }
+ 
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+  }
+ 
+  th {
+    background-color: #008080;
+    color: white;
+     
+  }
+ 
+  tr:nth-child(even) {
+    background-color: blanchedalmond;
+  }
+ 
+  tr:nth-child(odd) {
+    background-color: lightyellow;
+  }
+ 
+  td {
+    color: #587291;
+    font-weight: bold;
+  }
+ 
+  td,
+  th {
+    width: 110px;
+  }
+ 
+  table,
+  th,
+  td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 20px;
+    padding-top: 3%;
+    margin-top: 4%;
+    text-align: center;
+  }
+ 
+   .addDoctor {
+    background-color: #ca7a5b;
+    border: 0;
+    border-radius: 8px;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 85%;
+    margin-top: 25px;
+  } 
+
+  form{
+    text-align: center;
+  }
+ 
+  ::placeholder {
+    color: #587291;
+  }
+  
+  .footer-main {
+    /* position: fixed; */
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #008080;
+    height: 50px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: black;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    
+  }
+
+  /* #main-container {
+    position: relative;
+  } */
+
+
+

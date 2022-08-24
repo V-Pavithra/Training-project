@@ -1,0 +1,159 @@
+ 
+ body{
+    height: 100vh;
+   }
+
+ .nav {
+    background: #008080;
+    text-align: center;
+    height: 50px;
+    justify-content: space-between;
+  }
+ 
+  .nav ul {
+    display: inline-flex;
+    list-style: none;
+    color: white;
+  }
+ 
+  .nav ul li {
+    width: 150px;
+    margin: 5px;
+    padding: 7px;
+    font-weight: bold;
+  }
+ 
+  #details {
+    height: 50px;
+    background-color: darkgrey;
+    margin-left: 90px;
+    width: 120px;
+    
+  }
+ 
+  #details:hover {
+    height: 50px;
+    background-color: #8DC3EE;
+    
+  }
+ 
+  #search:hover{
+    width: 130px;
+  }
+
+  /* #slots:hover{
+    width: 100px;
+  } */
+
+  ul li a {
+    width: 80px;
+    text-decoration: none;
+    color: black;
+    margin-top: -6px;
+    display: block;
+    padding: 15px 20px;
+    position: relative;
+    top: -6px;
+    padding-right: 30px;
+    margin-left: 170px;
+  }
+ 
+  ul li a:hover {
+    background-color: #8DC3EE;
+    margin-top: -6px;
+    transition: 0.5s;
+    text-transform: initial;
+    height: 50px;
+    padding-left: 10px;
+  }
+ 
+  ul li a:active {
+    background-color: #303d4e;
+  }   
+ 
+  h4{
+    color: white;
+  }
+   
+   #btn {
+    background-color: #ca7a5b;
+    border: 0;
+    border-radius: 8px;
+    color: black;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 85%;
+    margin-top: 25px;
+    position: relative;
+    top: -10px;
+    left: -170px;
+  } 
+
+  /* .footer-main {
+    position: fixed; 
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #008080;
+    height: 50px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: black;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    
+  } */
+
+  *{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .search{
+    margin-left: 80%;
+    position: relative;
+    top: 30px;
+    
+  }
+
+   ::placeholder{
+     color: #008080;
+   }
+   
+
+
+    .container{
+        margin-top: 8%;
+    
+    }
+    .inner{
+        overflow: hidden;
+        text-align: center;
+        padding-top: 15px;
+    }
+    
+    #card{
+        width: 1000px;
+        height: 300px;
+    }
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    

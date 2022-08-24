@@ -1,0 +1,110 @@
+.nav {
+    background: #008080;
+    text-align: center;
+    height: 50px;
+    justify-content: space-between;
+  }
+ 
+  .nav ul {
+    display: inline-flex;
+    list-style: none;
+    color: white;
+  }
+ 
+  .nav ul li {
+    width: 150px;
+    margin: 5px;
+    padding: 7px;
+    font-weight: bold;
+  }
+ 
+  #details {
+    height: 50px;
+    background-color: darkgrey;
+    margin-left: 90px;
+    width: 120px;
+    
+  }
+ 
+  #details:hover {
+    height: 50px;
+    background-color: #8DC3EE;
+    
+  }
+ 
+  #pharmacy:hover{
+    width: 130px;
+  }
+
+  #slots:hover{
+    width: 100px;
+  }
+  ul li a {
+    width: 80px;
+    text-decoration: none;
+    color: black;
+    margin-top: -6px;
+    display: block;
+    padding: 15px 20px;
+    position: relative;
+    top: -6px;
+    padding-right: 30px;
+    margin-left: 170px;
+  }
+ 
+  ul li a:hover {
+    background-color: #8DC3EE;
+    margin-top: -6px;
+    transition: 0.5s;
+    text-transform: initial;
+    height: 50px;
+    padding-left: 10px;
+  }
+ 
+  ul li a:active {
+    background-color: #303d4e;
+  }   
+
+  .container{
+    max-width: 700px;  
+    background: #008080;
+    opacity: 0.8;
+    /* background: rgba(216, 178, 178, 0.5); */
+    margin-top: 5px;
+    padding: 40px 30px;
+    border-radius: 8px;
+     position: relative; 
+    /* top: -20px; */
+    padding-bottom: 20px;
+    /* top: -5px; */
+    /* position: fixed; */
+    top: 30px;
+    } 
+
+    label{
+        color: black;
+        font-weight: bold;
+    }
+
+    #btn {
+        background-color: #ca7a5b;
+        border: none;
+        color: black;
+        border-radius: 8px;
+        padding: 10px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+        top: 15px;
+        right: 180%;
+        left: 39%;
+        }
+  
+    
+ 
+ 
