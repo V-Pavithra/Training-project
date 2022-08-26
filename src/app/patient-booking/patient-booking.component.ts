@@ -13,27 +13,25 @@ import { PatientDisplayService } from '../service/patient-display.service';
   styleUrls: ['./patient-booking.component.css']
 })
 export class PatientBookingComponent implements OnInit {
-
+  doctorDetails: Patient=new Patient();
+  public doctors: Doctor[] = [];
   id!: number;
   doctor!: Doctor;
   patient: Patient=new Patient();
-  doctorId:any={};
+  doctorId='';
   term: any;
   constructor(private patientDisplayService: PatientDisplayService, private adminDoctorService: AdminDoctorService,private route: ActivatedRoute,private router: Router) { }
   
   ngOnInit(): void {
-    this.doctor=new Doctor();
-    this.id = this.route.snapshot.params['id'];
-    this.adminDoctorService.getById(this.id).subscribe(data =>{
-      console.log(this.doctorId=data);
+    // this.doctorDetails.appointmentId = Number(this.route.snapshot.paramMap.get('appointmentId'));
+
+    // this.doctor=new Doctor();
+    // this.id = this.route.snapshot.params['id'];
+    // this.adminDoctorService.getById(this.id).subscribe(data =>{
+    //   console.log(this.doctorId=data);
       
-    }, error => console.log(error));
+    // }, error => console.log(error));
 
-
-    // console.log(this.route.snapshot.params['id']);
-    // this.adminDoctorService.getById(this.route.snapshot.params['id']).subscribe((result)=>{
-    //   this.onAddBooking(bookForm).
-    // })
 
   }
 
@@ -43,6 +41,7 @@ export class PatientBookingComponent implements OnInit {
   }
   
   public onAddBooking(bookForm: NgForm): void {
+    // this.doctor.doctorDetails=this.doctorDetails;
     this.patientDisplayService.addBooking(bookForm.value).subscribe(
      (response: Patient)=>{
        console.log(response);

@@ -1,78 +1,81 @@
 <body>
 
-    <div class="nav" >
-      <ul>
+  <div class="nav">
+    <ul>
       <li><a id="details" style="margin-left: 120%;">DoctorDetails</a></li>
-      <li ><a routerLink="" id="pharmacy">PharmacyDetails</a></li>
+      <li><a routerLink="" id="pharmacy">PharmacyDetails</a></li>
       <li><a routerLink="" id="slots" style="margin-left: 140%;">SlotDetails</a></li>
       <!-- <li><a routerLink="/doctor/login" id="logout" style="margin-left: 500%;">Logout</a></li> -->
-      </ul>
+    </ul>
+  </div>
+
+  <div class="container">
+    <form #addForm="ngForm" (ngSubmit)="onAddDoctor(addForm)">
+      <div class="row">
+        <div class="col">
+          <label></label>
+          <input required type="text" class="form-control" ngModel name="doctorId" id="doctorid"
+            placeholder="Enter Doctor Id">
+        </div>
+        <div class="col">
+          <label></label>
+          <input required type="text" class="form-control" ngModel name="firstName" placeholder="Enter First Name">
+        </div>
       </div>
-      
-      <div class="container"> 
-        <form #addForm="ngForm" (ngSubmit)="onAddDoctor(addForm)">
-            <div class="row">
-                <div class="col">
-                  <label></label>
-                  <input required type="text" class="form-control" ngModel name="doctorId" id="doctorid" placeholder="Enter Doctor Id">
-                 </div>
-                 <div class="col">
-                  <label></label>
-                  <input required type="text" class="form-control" ngModel name="firstName" placeholder="Enter First Name">
-                 </div>
-                 </div>
-            <div class="row">
-                <div class="col">
-                      <label></label>
-                      <input required type="text" class="form-control" ngModel name="lastName" placeholder="Enter Last Name">
-                     </div>
-                     <div class="col">
-                      <label></label>
-                      <input required type="text" class="form-control" ngModel name="imageUrl" placeholder="Enter Image Url">
-                    </div>
-            </div>     
-            <div class="row">
-                <div class="col">
-                      <label></label>
-                      <input required type="email" class="form-control" ngModel name="emailId" placeholder="Enter Email Id">
-                     </div>
-                     <div class="col">
-                        <label></label>
-                        <select required  class="form-control" ngModel="Select Specialization" name="specialization" placeholder="Select Specialization"> 
-                          <option>Select Specialization</option> 
-                          <option>Cardialogy</option>
-                          <option>Gynacology</option>
-                          <option>Neurology</option>
-                          <option>Dermatology</option> 
-                          <option>Endocrinology</option>
-                          <option>Orthopedic</option>
-                          <option>Optometry</option>
-                        </select>   
-                       </div>
-            </div>    
-            <div class="row">
-                <div class="col">
-                      <label></label>
-                      <input required type="text" class="form-control" ngModel name="phoneNo" placeholder="Enter Phone Number">
-                     </div>
-                <div class="col">
-                      <label></label>
-                      <input required type="text" class="form-control" ngModel name="address" placeholder="Enter Current Address">
-                    </div>
-            </div>      
-            <div class="row col-md-6"> 
-                <div class="col"> 
-                 <label></label><br>
-                 <input required type="password" class="form-control" ngModel name="password" id="pwd" placeholder="Enter Password">
-                </div>
-            </div>   
+      <div class="row">
+        <div class="col">
+          <label></label>
+          <input required type="text" class="form-control" ngModel name="lastName" placeholder="Enter Last Name">
+        </div>
+        <div class="col">
+          <label></label>
+          <input required type="text" class="form-control" ngModel name="imageUrl" placeholder="Enter Image Url">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label></label>
+          <input required type="email" class="form-control" ngModel name="emailId" placeholder="Enter Email Id">
+        </div>
+        <div class="col">
+          <label></label>
+          <select required class="form-control" ngModel="Select Specialization" name="specialization"
+            placeholder="Select Specialization">
+            <option>Select Specialization</option>
+            <option>Cardialogy</option>
+            <option>Gynacology</option>
+            <option>Neurology</option>
+            <option>Dermatology</option>
+            <option>Endocrinology</option>
+            <option>Orthopedic</option>
+            <option>Optometry</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label></label>
+          <input required type="text" class="form-control" ngModel name="phoneNo" placeholder="Enter Phone Number">
+        </div>
+        <div class="col">
+          <label></label>
+          <input required type="text" class="form-control" ngModel name="address" placeholder="Enter Current Address">
+        </div>
+      </div>
+      <div class="row col-md-6">
+        <div class="col">
+          <label></label><br>
+          <input required type="password" class="form-control" ngModel name="password" id="pwd"
+            placeholder="Enter Password">
+        </div>
+      </div>
       <button [disabled]="addForm.form.invalid" type="submit" id="btn" class="btn btn-info">Submit</button>
       <button type="button" routerLink="/admin/doctor" id="btn" class="addDoctor">Back</button>
     </form>
-      </div>
-        <div class="footer-main">
-            <div class="footer-left">@All rights reserverd .inc</div>
-            <div class="footer right">Contact Us: 7465837589</div>
-          </div>
+  </div>
+  <div class="footer-main">
+    <div class="footer-left">@All rights reserverd .inc</div>
+    <div class="footer right">Contact Us: 7465837589</div>
+  </div>
 
-</body>  
+</body>

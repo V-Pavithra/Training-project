@@ -32,13 +32,10 @@
     
   }
  
-  #pharmacy:hover{
-    width: 130px;
+  #prescription:hover{
+    width: 135px;
   }
 
-  #slots:hover{
-    width: 100px;
-  }
   ul li a {
     width: 80px;
     text-decoration: none;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdminDoctorService } from '../service/admin-doctor.service';
 import { Doctor } from '../doctor';
 
@@ -11,13 +11,15 @@ import { Doctor } from '../doctor';
 export class DoctorLoginComponent implements OnInit {
   doctor = new Doctor();
   msg='';
+  id!: number; 
 
-  constructor(private adminDoctorService: AdminDoctorService,private route: Router) { }
+  constructor(private adminDoctorService: AdminDoctorService,private route: Router,private router: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
-  go(){
+  go(id: number){
+    // this.router.navigateByUrl(`/doctor/${id}/home`);
 		this.route.navigate(['/doctor/home']); 
 	}
 
@@ -26,7 +28,7 @@ export class DoctorLoginComponent implements OnInit {
       data => {
         console.log("response received");
          alert("Successfully Logged")
-        this.go();
+        this.go(this.id);
       },
       error => {
         console.log("Exception occured");

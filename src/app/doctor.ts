@@ -1,4 +1,7 @@
+import { Patient } from "./patient";
+
 export class Doctor{
+    doctorDetails!: Patient;
     id!: number;
     doctorId!: String;
     firstName!: String;

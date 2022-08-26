@@ -11,9 +11,8 @@ import { AdminDoctorService } from '../service/admin-doctor.service';
 export class PatientHomeComponent implements OnInit {
   doctorId!: String;
   public doctors!: Doctor[];
-  term: any;
+  searchDoctor: any;
   constructor(private adminDoctorService: AdminDoctorService) { }
-
 
   ngOnInit() {
     this.getDoctor(); 

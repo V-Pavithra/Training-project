@@ -1,125 +1,137 @@
-
 <body>
 
   <div id="main-div">
-    <div class="nav" >
+    <div class="nav">
       <ul>
-      <li><a id="details" style="margin-left: 120%;">DoctorDetails</a></li>
-      <li ><a routerLink="" id="pharmacy">PharmacyDetails</a></li>
-      <li><a routerLink="" id="slots" style="margin-left: 140%;">SlotDetails</a></li>
-      <!-- <li><a routerLink="/doctor/login" id="logout" style="margin-left: 500%;">Logout</a></li> -->
+        <li><a id="details" style="margin-left: 120%;">DoctorDetails</a></li>
+        <li><a routerLink="" id="pharmacy">PharmacyDetails</a></li>
+        <li><a routerLink="" id="slots" style="margin-left: 140%;">SlotDetails</a></li>
+        <!-- <li><a routerLink="/doctor/login" id="logout" style="margin-left: 500%;">Logout</a></li> -->
       </ul>
     </div>
 
     <div id="main-container">
-        <button type="button" routerLink="/admin/addDoctors" class="addDoctor">Add Doctor</button>
-        <table class="center">
-          <thead>
-              <tr>
-                <th>DoctorID</th>
-                <th>Image</th>
-                <th>FirstName</th>
-                <th>LastName</th>
-                <th>Specialization</th>
-                <th>Address</th>
-                <th>Email Id</th>
-                <th>PhoneNo</th>
-                <th>Password</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-              <tr *ngFor = "let i of doctors">
-                  <td>{{i.doctorId}}</td>
-                  <td><img src={{i?.imageUrl}} width="55px" height="55px"></td>
-                  <td>{{i.firstName}}</td>
-                  <td>{{i.lastName}}</td>
-                  <td>{{i.specialization}}</td>
-                  <td>{{i.address}}</td>
-                  <td>{{i.emailId}}</td>
-                  <td>{{i.phoneNo}}</td>
-                  <td>{{i.password}}</td>
-                  <td><i (click)="openPopup(i)" class="fa fa-pencil" style="font-size:24px;color:#587291;padding-right: 20%;cursor: pointer;"></i>
-                    <i (click)="OnDeleteDoctor(i)" class="fa fa-trash-o" style="font-size:24px;color:red;cursor: pointer;"></i>
-                  </td>   
-              </tr> 
-        </table>
-        </div>
+      <button type="button" routerLink="/admin/addDoctors" class="addDoctor">Add Doctor</button>
+      <table class="center">
+        <thead>
+          <tr>
+            <th>DoctorID</th>
+            <th>Image</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Specialization</th>
+            <th>Address</th>
+            <th>Email Id</th>
+            <th>PhoneNo</th>
+            <th>Password</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tr *ngFor="let i of doctors">
+          <td>{{i.doctorId}}</td>
+          <td><img src={{i?.imageUrl}} width="55px" height="55px"></td>
+          <td>{{i.firstName}}</td>
+          <td>{{i.lastName}}</td>
+          <td>{{i.specialization}}</td>
+          <td>{{i.address}}</td>
+          <td>{{i.emailId}}</td>
+          <td>{{i.phoneNo}}</td>
+          <td>{{i.password}}</td>
+          <td><i (click)="openPopup(i)" class="fa fa-pencil"
+              style="font-size:24px;color:#587291;padding-right: 20%;cursor: pointer;"></i>
+            <i (click)="OnDeleteDoctor(i)" class="fa fa-trash-o" style="font-size:24px;color:red;cursor: pointer;"></i>
+          </td>
+        </tr>
+      </table>
+    </div>
 
-         
-        <div class="footer-main">
-            <div class="footer-left">@All rights reserverd .inc</div>
-            <div class="footer right">Contact Us: 7465837589</div>
-        </div>
-  </div> 
 
-  
+    <div class="footer-main">
+      <div class="footer-left">@All rights reserverd .inc</div>
+      <div class="footer right">Contact Us: 7465837589</div>
+    </div>
+  </div>
+
+
 </body>
 
-<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}" id="exampleModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}" id="exampleModal"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel" style="color:black; font-weight: bold;">UPDATE DOCTOR</h5>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Remove_font_awesome.svg/768px-Remove_font_awesome.svg.png" (click)="close()" style="width: 20px; cursor: pointer;">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Remove_font_awesome.svg/768px-Remove_font_awesome.svg.png"
+          (click)="close()" style="width: 20px; cursor: pointer;">
       </div>
       <div class="modal-body">
-      <div class="container">
-      <form #updateForm="ngForm" (ngSubmit)="register()">
-      <div class="row">
-      <div class="col">
-      <label></label>
-      <input required type="text" class="form-control" [(ngModel)]="updateDoctorDetails.firstName" name="firstName" id="fname" placeholder="Enter First Name">
+        <div class="container">
+          <form #updateForm="ngForm" (ngSubmit)="register()">
+            <div class="row">
+              <div class="col">
+                <label></label>
+                <input required type="text" class="form-control" [(ngModel)]="updateDoctorDetails.firstName"
+                  name="firstName" id="fname" placeholder="Enter First Name">
+              </div>
+              <div class="col">
+                <label></label>
+                <input required type="text" class="form-control" [(ngModel)]="updateDoctorDetails.lastName"
+                  name="lastName" id="lname" placeholder="Enter Last Name">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label></label>
+                <input required type="email" class="form-control" [(ngModel)]="updateDoctorDetails.emailId"
+                  name="emailId" id="email" placeholder="Enter First Name">
+              </div>
+              <div class="col">
+                <label></label>
+                <input required type="text" class="form-control" [(ngModel)]="updateDoctorDetails.imageUrl"
+                  name="imageUrl" id="image" placeholder="Enter Image Url">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label></label>
+                <input required type="text" class="form-control" [(ngModel)]="updateDoctorDetails.address"
+                  name="address" id="address" placeholder="Enter Current Address">
+              </div>
+              <div class="col">
+                <label></label>
+                <select required class="form-control" [(ngModel)]="updateDoctorDetails.specialization"
+                  name="specialization" id="specialization" placeholder="Select Specialization">
+                  <option>Select Specialization</option>
+                  <option>Cardialogy</option>
+                  <option>Gynacology</option>
+                  <option>Neurology</option>
+                  <option>Dermatology</option>
+                  <option>Endocrinology</option>
+                  <option>Orthopedic</option>
+                  <option>Optometry</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label></label>
+                <input required type="text" class="form-control" [(ngModel)]="updateDoctorDetails.phoneNo"
+                  name="phoneNo" id="phno" placeholder="Enter Phone Number">
+              </div>
+              <div class="col">
+                <label></label>
+                <input required type="password" class="form-control" [(ngModel)]="updateDoctorDetails.password"
+                  name="password" id="pwd" placeholder="Enter Password">
+              </div>
+            </div>
+            <div><br>
+              <button type="submit" class="btn btn-primary" class="btn btn-primary" id="addOnButton" (click)="close()"
+                style="margin-left: 35px;  background-color: #ca7a5b;">Update Doctor</button>
+            </div>
+          </form>
+          <div>
+          </div>
+        </div>
       </div>
-      <div class="col">
-      <label></label>
-      <input required type="text" class="form-control" [(ngModel)]="updateDoctorDetails.lastName" name="lastName" id="lname" placeholder="Enter Last Name">
-      </div>
-      </div>
-     <div class="row">
-     <div class="col">
-      <label></label>
-      <input required type="email" class="form-control" [(ngModel)]="updateDoctorDetails.emailId" name="emailId" id="email" placeholder="Enter First Name">
-      </div>
-      <div class="col">
-      <label></label>
-      <input required type="text" class="form-control" [(ngModel)]="updateDoctorDetails.imageUrl" name="imageUrl" id="image" placeholder="Enter Image Url">
-      </div>
-     </div>  
-      <div class="row">
-     <div class="col">
-     <label></label>
-    <input required type="text" class="form-control" [(ngModel)]="updateDoctorDetails.address" name="address" id="address" placeholder="Enter Current Address">
-    </div>
-      <div class="col">
-     <label></label>
-     <select required  class="form-control" [(ngModel)]="updateDoctorDetails.specialization" name="specialization" id="specialization" placeholder="Select Specialization"> 
-     <option>Select Specialization</option>
-     <option>Cardialogy</option>
-     <option>Gynacology</option>
-     <option>Neurology</option>
-     <option>Dermatology</option> 
-     <option>Endocrinology</option>
-     <option>Orthopedic</option>
-     <option>Optometry</option>
-     </select>   
-     </div>
-    </div>
-   <div class="row">
-   <div class="col">
-    <label></label>
-    <input required type="text" class="form-control" [(ngModel)]="updateDoctorDetails.phoneNo" name="phoneNo" id="phno" placeholder="Enter Phone Number">
-    </div>
-    <div class="col">
-    <label></label>
-    <input required type="password" class="form-control" [(ngModel)]="updateDoctorDetails.password" name="password" id="pwd" placeholder="Enter Password">
-    </div>
-    </div> 
-    <div ><br>
-    <button type="submit" class="btn btn-primary"  class="btn btn-primary" id="addOnButton" (click)="close()" style="margin-left: 35px;  background-color: #ca7a5b;">Update Doctor</button>
-    </div>
-    </form>   
-    <div>    
-    </div>  
-    </div>
-    </div>
     </div>

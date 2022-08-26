@@ -24,7 +24,6 @@ export class PatientDisplayService {
       return this.http.put<Patient>(`${this.apiServerUrl}/updateBooking/${data.appointmentId}`, data);
     }
     
-    
-
+  
 
 }
